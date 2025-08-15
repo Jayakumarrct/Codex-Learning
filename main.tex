@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amsthm,amssymb,hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\title{Lecture Notes}
+\author{Jay}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Warm-up}\label{sec:warmup}
+
+\begin{theorem}\label{thm:identity}
+If $G$ is a group, the identity element is unique.
+\end{theorem}
+
+\begin{proof}
+Standard argument: if $e,e'$ are identities, then $e=e\cdot e'=e'$.
+\end{proof}
+
+\begin{lemma}\label{lem:inv-unique}
+In a group, inverses are unique.
+\end{lemma}
+
+\begin{proof}
+If $g^{-1}$ and $h$ are both inverses of $g$, then $g^{-1}=g^{-1}gh=h$.
+\end{proof}
+
+\begin{definition}\label{def:group}
+A group is a set $G$ with an operation $\cdot$ satisfying associativity, identity, and inverses.
+\end{definition}
+
+\begin{remark}\label{rem:group-notation}
+Group notation often suppresses the operation symbol.
+\end{remark}
+
+\begin{example}\label{ex:integers}
+The integers $\mathbb{Z}$ with addition form a group.
+\end{example}
+
+\begin{corollary}\label{cor:inv-inv}
+For $g\in G$, the inverse of $g^{-1}$ is $g$.
+\end{corollary}
+
+\begin{proof}
+By Lemma~\ref{lem:inv-unique}, $g$ is the unique inverse of $g^{-1}$.
+\end{proof}
+\end{document}
