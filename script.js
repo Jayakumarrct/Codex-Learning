@@ -4,6 +4,7 @@ const nSlider=document.getElementById('n');
 const kSlider=document.getElementById('k');
 const nOut=document.getElementById('nVal');
 const kOut=document.getElementById('kVal');
+const saveBtn=document.getElementById('save');
 
 function fitHiDPI(){
   const dpr=window.devicePixelRatio||1;
@@ -36,7 +37,16 @@ function update(){
   const k=parseInt(kSlider.value,10);
   nOut.textContent=n; kOut.textContent=k; draw(n,k);
 }
+function savePNG(){
+  const name=`times-table-n${nSlider.value}-k${kSlider.value}.png`;
+  const a=document.createElement('a');
+  a.download=name;
+  a.href=canvas.toDataURL('image/png');
+  a.click();
+}
 addEventListener('resize',update);
 nSlider.addEventListener('input',update);
 kSlider.addEventListener('input',update);
+saveBtn.addEventListener('click',savePNG);
+addEventListener('keydown',(e)=>{if(e.key.toLowerCase()==='s')savePNG();});
 update();
