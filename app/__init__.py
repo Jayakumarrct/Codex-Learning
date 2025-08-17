@@ -1,1 +1,1 @@
-# Package initializer
+"""Image to EPS application package."""

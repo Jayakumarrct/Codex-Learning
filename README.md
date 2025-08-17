@@ -1,14 +1,27 @@
 # Image to EPS (macOS)
-A simple macOS app that converts JPG/JPEG/JPS/PNG to EPS.
 
-## Features
-- Native file picker (Finder)
-- Batch convert to .eps
-- DMG installer
-- Works offline
+Convert JPG/JPEG/JPS/PNG → EPS.
+
+## Install options
+**A) DMG (drag-and-drop)**
+1. Open `ImageToEPS.dmg`
+2. Drag **Image to EPS.app** → **Applications**
+3. Launch via Spotlight
+
+**B) Setup.pkg (double-click installer)**
+1. Unzip `ImageToEPS-Setup.zip`
+2. Run `ImageToEPS-Setup.pkg`
+3. App installs to **/Applications**
+
+Gatekeeper: right-click → Open (first run).
+
+## Use
+Open app → “Open Images…” → pick files → choose output folder → EPS files appear there.
 
 ## Local build (macOS)
 ```bash
-make dmg
-# DMG: ./ImageToEPS.dmg
+make dist
+# Outputs:
+#   ./ImageToEPS.dmg
+#   ./ImageToEPS-Setup.zip  (contains ImageToEPS-Setup.pkg)
 ```
