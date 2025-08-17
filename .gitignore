@@ -5,8 +5,11 @@ __pycache__/
 # py2app
 build/
 dist/
-# DMG staging
+# Packaging
 package/
+pkgroot/
 ImageToEPS.dmg
+ImageToEPS-Setup.pkg
+ImageToEPS-Setup.zip
 # macOS
 .DS_Store

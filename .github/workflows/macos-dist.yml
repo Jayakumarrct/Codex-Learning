@@ -1,0 +1,26 @@
+name: macOS dist
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --upgrade pip
+      - run: pip install -r requirements.txt
+      - run: make dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ImageToEPS.dmg
+          path: ImageToEPS.dmg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ImageToEPS-Setup.zip
+          path: ImageToEPS-Setup.zip
